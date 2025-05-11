@@ -93,7 +93,7 @@ export default async function BlogPage() {
                   <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 group-hover:opacity-75 transition-opacity duration-300"></div>
                     <Image
-                      src={post.image ? serverUrl + '/' + post.image : "/placeholder.svg?height=200&width=400"}
+                      src={post.image ? serverUrl + '/storage/' + post.image : "/placeholder.svg?height=200&width=400"}
                       width={400}
                       height={200}
                       alt={post.title}

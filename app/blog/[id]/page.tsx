@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-600/30"></div>
             <Image
               priority
-              src={postData.image ? serverUrl + '/' + postData.image : "/placeholder.svg?height=400&width=800"}
+              src={postData.image ? serverUrl + '/storage/' + postData.image : "/placeholder.svg?height=400&width=800"}
               width={800}
               height={400}
               alt={postData.title}

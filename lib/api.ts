@@ -1,6 +1,6 @@
 export const serverUrl = process.env.NEXT_PUBLIC_API_URL || "https://web.amasparera.my.id"
 // Fungsi untuk mengambil data blog dari API
-export async function fetchBlogPosts({ limit = 10 }: { page?: number, limit?: number }) {
+export async function fetchBlogPosts({ limit = 100 }: { page?: number, limit?: number }) {
   try {
     const response = await fetch(`${serverUrl}/api/posts?limit=${limit}`, {
       method: "GET",

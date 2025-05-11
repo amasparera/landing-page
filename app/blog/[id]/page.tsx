@@ -109,11 +109,8 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
             <div className="flex flex-wrap items-center gap-4 text-gray-400">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                <span>{formatDate(postData.createdAt)}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                <span>{postData.readTime || "5 menit baca"}</span>
+                Tanggal dibuat
+                <span>{formatDate(postData.created_at)}</span>
               </div>
               {postData.author && (
                 <div className="text-sm text-gray-400">

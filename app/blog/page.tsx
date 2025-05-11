@@ -5,11 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft } from "lucide-react"
 import { fetchBlogPosts, serverUrl } from "@/lib/api"
 
+
 export default async function BlogPage() {
-  const data = await fetchBlogPosts({ limit: 100 })
+  const data = await fetchBlogPosts({ limit: 99 })
   const posts = data.posts || []
 
-  console.log("BlogPage", posts)
+  console.log("BlogPage", data)
+
 
   // Format date for display
   const formatDate = (dateString: string) => {

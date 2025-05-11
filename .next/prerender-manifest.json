@@ -1,31 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/blog": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog",
-      "dataRoute": "/blog.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -49,13 +24,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/blog": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog",
+      "dataRoute": "/blog.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b65534b93366ca8e325db1e7d22e8417",
-    "previewModeSigningKey": "99c33a64c5af1a4b637302f2698010cc08ad88719249dd064fca2ab592b101b7",
-    "previewModeEncryptionKey": "f47cba4c2d3a8fd7e92becd440f777192c5088cd49a25ef30e5839f21407c7eb"
+    "previewModeId": "1ac97c9335e5864a7861b0761fa20896",
+    "previewModeSigningKey": "18138f3ab50e08ace851001a39e90c41bfdab249c7a8310fd15d26193202f27b",
+    "previewModeEncryptionKey": "b4e1f34afb51978bf4aebf9f8f9ee7296de9f243c50d41b643ed18187ed23802"
   }
 }

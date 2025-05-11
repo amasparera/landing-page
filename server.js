@@ -1,21 +1,8 @@
-import { createServer } from "http";
-import {next} from "next";
-import { parse } from "url";
+const http = require('http');
 
-const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
-const handle = app.getRequestHandler();
-
-
-app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true);
-    handle(req, res, parsedUrl);
-  }).listen(3000, (err) => {
-    if (err) throw err;
-    console.log("> Ready on http://localhost:3000");
-  });
-}
-).catch((err) => {
-  console.error("Error starting server:", err);
+http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end("Hello from raw Node.js");
+}).listen(process.env.PORT || 3000, () => {
+  console.log("Server started");
 });

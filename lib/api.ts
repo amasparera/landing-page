@@ -4,7 +4,7 @@ export async function fetchBlogPosts({ limit = 100 }: { page?: number, limit?: n
   try {
     const response = await fetch(`${serverUrl}/api/posts?limit=${limit}`, {
       method: "GET",
-      // Revalidate setiap 1 jam
+      next: { revalidate: 60 }, // Revalidate setiap 1 jam
     })
 
     if (!response.ok) {
@@ -25,7 +25,7 @@ export async function fetchBlogPosts({ limit = 100 }: { page?: number, limit?: n
 export async function fetchBlogPostBySlug(slug: string) {
   try {
     const response = await fetch(`${serverUrl}/api/posts/${slug}`, {
-      // Revalidate setiap 1 jam
+      next: { revalidate: 60 }, // Revalidate setiap 1 jam
     })
 
     if (!response.ok) {
